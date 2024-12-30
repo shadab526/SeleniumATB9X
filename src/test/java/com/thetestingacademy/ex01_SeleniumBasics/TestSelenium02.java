@@ -9,15 +9,14 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 
-public class TestSelenium01 {
+public class TestSelenium02 {
     @Description("Open the app.vwo.com url and get the title")
     @Test
-    public void test_Title(){
+    public void test_URL(){
         WebDriver driver = new ChromeDriver();
         driver.get("https://app.vwo.com/#/login");
-        System.out.println(driver.getTitle());
-        File f = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        
+        System.out.println(driver.getCurrentUrl());
+        System.out.println(driver.getPageSource());
         driver.close();
     }
 }
